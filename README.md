@@ -6,7 +6,7 @@
 docker run -p 6379:6379 --name redis-redisbloom redislabs/rebloom:latest
 ```
 
-
+本实例还list map guava作为缓存的性能判断
 #### 一）对以下方法进行性能测试比较
 
 ​     1. List的 contains 方法
@@ -15,7 +15,7 @@ docker run -p 6379:6379 --name redis-redisbloom redislabs/rebloom:latest
 
 ​     3. Google布隆过滤器 mightContain 方法
 
-#### 过lua脚本实现布隆客户端布隆过滤
+#### 二） 过lua脚本实现布隆客户端布隆过滤
 
    - 实现通过Lua脚本批量插入数据到redis布隆过滤器 
 
