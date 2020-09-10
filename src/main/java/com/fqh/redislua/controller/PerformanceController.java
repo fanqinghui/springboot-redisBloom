@@ -6,7 +6,7 @@ import com.google.common.collect.Maps;
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
@@ -77,7 +77,7 @@ public class PerformanceController {
     /**
      * 1、list 查看value是否存在 执行时间
      */
-    @RequestMapping("/list")
+    @GetMapping("/list")
     public void existsList() {
         //计时开始
         stopwatch.start();
@@ -95,7 +95,7 @@ public class PerformanceController {
     /**
      * 2、查看map 判断k值是否存在 执行时间
      */
-    @RequestMapping("/map")
+    @GetMapping("/map")
     public void existsMap() {
         //计时开始
         stopwatch.start();
@@ -115,7 +115,7 @@ public class PerformanceController {
     /**
      * 3、查看guava布隆过滤器 判断value值是否存在 执行时间
      */
-    @RequestMapping("/bloom")
+    @GetMapping("/bloom")
     public void existsBloom() {
         //计时开始
         stopwatch.start();
